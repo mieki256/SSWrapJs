@@ -1,0 +1,6 @@
+MY_HTML_FILE RCDATA "index.html"
+
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+ 1 "SSaver Wrapper JavaScript"
+END

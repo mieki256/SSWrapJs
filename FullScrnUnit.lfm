@@ -1,0 +1,95 @@
+object FullScrnForm: TFullScrnForm
+  Left = 358
+  Height = 480
+  Top = 250
+  Width = 640
+  BorderStyle = bsNone
+  Caption = 'ScreenSaverWrapperJavaScript'
+  ClientHeight = 480
+  ClientWidth = 640
+  Color = clBlack
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clGray
+  Font.Height = -16
+  Font.Name = 'Segoe UI'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  FormStyle = fsStayOnTop
+  KeyPreview = True
+  LCLVersion = '4.4.0.0'
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  object WVWindowParent1: TWVWindowParent
+    Left = 0
+    Height = 480
+    Top = 0
+    Width = 640
+    Align = alClient
+    TabOrder = 0
+    Browser = WVBrowser1
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 480
+    Top = 0
+    Width = 640
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 480
+    ClientWidth = 640
+    ParentBackground = False
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 24
+      Height = 21
+      Top = 24
+      Width = 185
+      Caption = 'Initializing WebView2 ...'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clGray
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 24
+      Height = 21
+      Top = 56
+      Width = 112
+      Caption = 'ESC key to exit'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clGray
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object WVBrowser1: TWVBrowser
+    TargetCompatibleBrowserVersion = '114.0.1823.32'
+    AllowSingleSignOnUsingOSPrimaryAccount = False
+    OnInitializationError = WVBrowser1InitializationError
+    OnAfterCreated = WVBrowser1AfterCreated
+    OnNavigationCompleted = WVBrowser1NavigationCompleted
+    Left = 36
+    Top = 136
+  end
+  object InitTimer: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = InitTimerTimer
+    Left = 103
+    Top = 136
+  end
+  object MouseCheckTimer: TTimer
+    OnTimer = MouseCheckTimerTimer
+    Left = 168
+    Top = 136
+  end
+end

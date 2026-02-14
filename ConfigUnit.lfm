@@ -1,0 +1,222 @@
+object ConfigForm: TConfigForm
+  Left = 358
+  Height = 451
+  Top = 250
+  Width = 580
+  Caption = 'ConfigForm'
+  ClientHeight = 451
+  ClientWidth = 580
+  Constraints.MinHeight = 380
+  Constraints.MinWidth = 580
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -15
+  Font.Name = 'Segoe UI'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  LCLVersion = '4.4.0.0'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  object LabelAppName: TLabel
+    Left = 16
+    Height = 40
+    Top = 16
+    Width = 133
+    Caption = 'SSWrapJs'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -29
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object LabelAppVer: TLabel
+    Left = 495
+    Height = 15
+    Top = 16
+    Width = 55
+    Anchors = [akTop, akRight]
+    Caption = 'Ver. 1.0.0.0'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 208
+    Height = 20
+    Top = 73
+    Width = 40
+    Caption = 'Name'
+  end
+  object Label4: TLabel
+    Left = 208
+    Height = 20
+    Top = 143
+    Width = 23
+    Caption = 'URI'
+  end
+  object Label5: TLabel
+    Left = 208
+    Height = 20
+    Top = 288
+    Width = 246
+    Caption = 'Exit condition (ESC key = Exit always)'
+  end
+  object Label6: TLabel
+    Left = 208
+    Height = 20
+    Top = 213
+    Width = 173
+    Caption = 'Preview .BMP ( 152 x 112 )'
+  end
+  object EditName: TEdit
+    Left = 208
+    Height = 28
+    Top = 104
+    Width = 145
+    TabOrder = 2
+    Text = 'None'
+  end
+  object EditUri: TEdit
+    Left = 208
+    Height = 28
+    Top = 174
+    Width = 302
+    Anchors = [akTop, akLeft, akRight]
+    TabOrder = 3
+    Text = 'https://www.example.com/index.html'
+  end
+  object EditPreview: TEdit
+    Left = 208
+    Height = 28
+    Top = 244
+    Width = 302
+    Anchors = [akTop, akLeft, akRight]
+    TabOrder = 5
+  end
+  object CheckBoxKeyDown: TCheckBox
+    Left = 208
+    Height = 24
+    Top = 320
+    Width = 81
+    Caption = 'KeyDown'
+    TabOrder = 7
+  end
+  object CheckBoxMouseDown: TCheckBox
+    Left = 309
+    Height = 24
+    Top = 320
+    Width = 106
+    Caption = 'MouseButton'
+    TabOrder = 8
+  end
+  object CheckBoxMouseMove: TCheckBox
+    Left = 435
+    Height = 24
+    Top = 320
+    Width = 99
+    Caption = 'MouseMove'
+    TabOrder = 9
+  end
+  object ButtonAddItem: TButton
+    Left = 208
+    Height = 32
+    Top = 358
+    Width = 75
+    Caption = 'Add'
+    TabOrder = 10
+    OnClick = ButtonAddItemClick
+  end
+  object ButtonDeleteItem: TButton
+    Left = 296
+    Height = 32
+    Top = 358
+    Width = 75
+    Caption = 'Delete'
+    TabOrder = 11
+    OnClick = ButtonDeleteItemClick
+  end
+  object ButtonUpdateItem: TButton
+    Left = 384
+    Height = 32
+    Top = 358
+    Width = 75
+    Caption = 'Update'
+    TabOrder = 12
+    OnClick = ButtonUpdateItemClick
+  end
+  object ButtonSaveData: TButton
+    Left = 384
+    Height = 33
+    Top = 407
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = 'Save'
+    TabOrder = 13
+    OnClick = ButtonSaveDataClick
+  end
+  object ButtonClose: TButton
+    Left = 481
+    Height = 33
+    Top = 407
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = 'Close'
+    TabOrder = 0
+    OnClick = ButtonCloseClick
+  end
+  object ButtonSelUri: TButton
+    Left = 512
+    Height = 29
+    Top = 173
+    Width = 38
+    Anchors = [akTop, akRight]
+    Caption = '...'
+    TabOrder = 4
+    OnClick = ButtonSelUriClick
+  end
+  object ButtonSelPreview: TButton
+    Left = 512
+    Height = 29
+    Top = 243
+    Width = 38
+    Anchors = [akTop, akRight]
+    Caption = '...'
+    TabOrder = 6
+    OnClick = ButtonSelPreviewClick
+  end
+  object ButtonOpenCfgDir: TButton
+    Left = 435
+    Height = 25
+    Top = 48
+    Width = 115
+    Anchors = [akTop, akRight]
+    AutoSize = True
+    Caption = 'Config file folder'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 14
+    OnClick = ButtonOpenCfgDirClick
+  end
+  object ListBox1: TListBox
+    Left = 16
+    Height = 324
+    Top = 73
+    Width = 166
+    Anchors = [akTop, akLeft, akBottom]
+    ItemHeight = 0
+    TabOrder = 1
+    OnClick = ListBox1Click
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 512
+    Top = 80
+  end
+end

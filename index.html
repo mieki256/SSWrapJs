@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Random Color & Position</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, 'Arial Black', sans-serif;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #floating-text {
+            position: absolute;
+            font-size: 2vw;
+            font-weight: bold;
+            transition: all 0.8s ease;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="floating-text">ScreenSaver Wrapper JavaScript</div>
+
+    <script>
+        const textElement = document.getElementById('floating-text');
+
+        function updateElement() {
+            // 1. 位置の計算
+            const maxX = window.innerWidth - textElement.clientWidth;
+            const maxY = window.innerHeight - textElement.clientHeight;
+            const randomX = Math.floor(Math.random() * Math.max(0, maxX));
+            const randomY = Math.floor(Math.random() * Math.max(0, maxY));
+
+            // 2. ランダムな色の生成 (RGB)
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            const randomColor = `rgb(${r}, ${g}, ${b})`;
+
+            // 3. 反映
+            textElement.style.left = randomX + 'px';
+            textElement.style.top = randomY + 'px';
+            textElement.style.color = randomColor;
+        }
+
+        // 1秒(1000ミリ秒)ごとに実行
+        setInterval(updateElement, 1000);
+
+        // 初回実行
+        updateElement();
+    </script>
+</body>
+
+</html>
